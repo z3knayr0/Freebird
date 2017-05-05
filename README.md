@@ -12,7 +12,7 @@
   * Jsoup
   * themoviedb api
   * Running on an embedded Jetty server
-* Client: developed in Angular 4 (Typescript 6)
+* Client: developed in Angular 4 (based on Angular CLI 1.0.0)
 
 # Web Interface
 * **Dashboard**: main page showing latest movies/episodes and a search bar
