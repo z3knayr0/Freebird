@@ -40,9 +40,9 @@
 
 ### Download and extract the latest release, the archive contains
 * a directory **freebird-server**: Freebird.X.X.X.jar and a sub folder “config”
-* a directory **"freebird-web"**:  Compiled files ready to be deployed on a web server (Nginx, Apache...)
+* a directory **freebird-web**:  Compiled files ready to be deployed on a web server (Nginx, Apache...)
 
-### Copy the content of “web” folder in your “www” directory.
+### Copy the content of "freebird-web" folder in your "www" directory.
 
 ### Configure the server
   * Open the file config/application.yml
@@ -57,7 +57,7 @@
   `java -Dspring.profiles.active=h2 -jar Freebird.X.X.X.jar`
 
 ### Access to the web app
-  * Once the server started, access to http://localhost/freebird in your favorite browser. The default user is admin / admin.
+  * Once the server started, access to http://localhost/ in your favorite browser. The default user is admin / admin.
   * Access to “Administration”, tab “Sites” 
   * Add a site and tick “scan now”
   * Click on “Add“
