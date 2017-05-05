@@ -31,8 +31,8 @@
 * Create an account on https://www.themoviedb.org and get your API Key v3
 
 ### Download and extract the latest release, the archive contains
-* a directory **"server"**: Freebird.(version).jar and a sub folder “config”
-* a directory **"web"**:  Compiled files ready to be deployed on a web server (Nginx, Apache...)
+* a directory **freebird-server**: Freebird.X.X.X.jar and a sub folder “config”
+* a directory **"freebird-web"**:  Compiled files ready to be deployed on a web server (Nginx, Apache...)
 
 ### Copy the content of “web” folder in your “www” directory.
 
@@ -46,7 +46,7 @@
 
 ### Start the server
   Type the command:
-  `java -Dspring.profiles.active=h2 -jar Freebird.(version).jar`
+  `java -Dspring.profiles.active=h2 -jar Freebird.X.X.X.jar`
 
 ### Access to the web app
   * Once the server started, access to http://localhost/freebird in your favorite browser. The default user is admin / admin.
