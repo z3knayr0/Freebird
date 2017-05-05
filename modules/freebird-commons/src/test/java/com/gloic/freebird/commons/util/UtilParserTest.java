@@ -67,10 +67,6 @@ public class UtilParserTest {
         expected = 1_600_000_000L;
         Assert.assertEquals(expected, UtilsParser.sizeStringToLong(given));
 
-        given = ".6 G";
-        expected = null;
-        Assert.assertEquals(expected, UtilsParser.sizeStringToLong(given));
-
         given = "26.21MB";
         expected = 26_210_000L;
         Assert.assertEquals(expected, UtilsParser.sizeStringToLong(given));
