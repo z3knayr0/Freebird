@@ -1,0 +1,47 @@
+<div>
+  <label>Url:</label>
+  <input [(ngModel)]="model.site.url" placeholder="url"/>
+  <p-checkbox #scanNow binary="true" label="Scan now"></p-checkbox>
+  <button (click)="onAddSiteClicked(scanNow.checked)" class="btn btn-default">Add</button>
+</div>
+
+<p-dataTable [value]="model.sites" #dt>
+  <!--Column: Url-->
+  <p-column field="url" header="Url" sortable="true" [filter]="true" [style]="{'overflow':'visible'}"
+            filterMatchMode="contains">
+    <template let-col let-site="rowData" let-ri="rowIndex" pTemplate="body">
+      <a href="{{site[col.field]}}">{{site[col.field]}}</a>
+    </template>
+  </p-column>
+  <!--Column: Site Status-->
+  <p-column field="siteStatus" header="Status" sortable="true"></p-column>
+
+  <!--Column: Last Scan-->
+  <p-column field="lastScan" header="Last scan" sortable="true">
+    <template let-col let-site="rowData" let-ri="rowIndex" pTemplate="body">
+      {{site[col.field] | date: 'dd/MM/yyyy hh:mm'}}
+    </template>
+  </p-column>
+
+  <!--Column: Stats-->
+  <p-column header="Stats">
+    <template let-site="rowData" pTemplate="body">
+      <div>Movie: {{site.numberMovieOnline}} <span *ngIf="site.numberMovieNew" class="label label-default">+{{site.numberMovieNew}}</span>
+      </div>
+      <div>Episodes: {{site.numberEpisodeOnline}} <span *ngIf="site.numberEpisodeNew" class="label label-default">+{{site.numberEpisodeNew}}</span>
+      </div>
+      <div>Unknowns: {{site.numberUnknownOnline}} <span *ngIf="site.numberUnknownNew" class="label label-default">+{{site.numberUnknownNew}}</span>
+      </div>
+    </template>
+  </p-column>
+
+  <!--Column: Commands-->
+  <p-column header="Commands">
+    <template let-site="rowData" pTemplate="body">
+      <div>
+        <p-checkbox #redoUnknowns binary="true" label="Redo unknowns"></p-checkbox>
+        <button (click)="onForceScanClicked(site.id, redoUnknowns.checked)" class="btn btn-default">Scan</button>
+      </div>
+    </template>
+  </p-column>
+</p-dataTable>

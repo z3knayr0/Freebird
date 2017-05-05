@@ -1,0 +1,21 @@
+<div *ngIf="model.user">
+  <label>Username:</label>
+  <input [(ngModel)]="model.user.username" placeholder="Username"/>
+  <label>Password:</label>
+  <input [(ngModel)]="model.user.password" type="password" placeholder="Password"/>
+  <button (click)="onUserAddClicked()" class="btn btn-default">Create</button>
+</div>
+<div>
+  <p-dataTable [value]="model.users">
+    <p-column field="id" header="Id" [style]="{'width':'15px', 'text-align':'center'}"></p-column>
+    <p-column field="username" header="Username" [style]="{'width':'20px', 'text-align':'center'}"></p-column>
+    <p-column field="enabled" header="Enabled" [style]="{'width':'15px', 'text-align':'center'}"></p-column>
+    <p-column field="authorities" header="Authorities" [style]="{'width':'15px', 'text-align':'center'}"></p-column>
+    <p-column [style]="{'width':'20px'}">
+      <template pTemplate="header">Commands</template>
+      <template let-selecteduser="rowData" pTemplate="body">
+        <a (click)="onDeleteUserClicked(selecteduser)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </template>
+    </p-column>
+  </p-dataTable>
+</div>

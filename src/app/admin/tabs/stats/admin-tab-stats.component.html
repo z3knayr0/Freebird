@@ -1,0 +1,9 @@
+<div *ngIf="model.sites">
+  <a><span (click)="onRefreshClicked()" class="glyphicon glyphicon-refresh"></span></a>
+  <div>Number of site: {{model.sites?.length}}</div>
+  <div>Number of movies: {{model.nbMovies}} <span *ngIf="model.nbMoviesNew" class="label label-default">+{{model.nbMoviesNew}}</span></div>
+  <div>Number of episodes: {{model.nbEpisodes}} <span *ngIf="model.nbEpisodesNew" class="label label-default">+{{model.nbEpisodesNew}}</span></div>
+  <div>Number of unknowns: {{model.nbUnknowns}} <span *ngIf="model.nbUnknownsNew" class="label label-default">+{{model.nbUnknownsNew}}</span></div>
+  <p-checkbox #redoUnknownsAll binary="true" label="Redo unknowns"></p-checkbox>
+  <button (click)="onScanAllClicked(redoUnknownsAll)" class="btn btn-default">Scan all</button>
+</div>
