@@ -7,6 +7,8 @@
 <img src="./screenshots/movies.png" alt="Movies" width= 500px/>
 <img src="./screenshots/tvshows.png" alt="Tv Shows" width= 500px/>
 
+**For more screenshots, consult [SCREENSHOTS.md](SCREENSHOTS.md)**
+
 # Architecture
   The application is split into distinct parts:
   - **Server** : explores sites, scrapes medias and provides a secure REST API
